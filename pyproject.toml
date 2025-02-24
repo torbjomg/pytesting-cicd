@@ -1,0 +1,27 @@
+[project]
+name = "pytesting-cicd"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "torbjomg", email = "torbjorngul@gmail.com" }]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+pytesting-cicd = "pytesting_cicd:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["pytest>=8.3.4"]
+
+[tool.pytest.ini_options]
+# Add the src directory to the python path, needed for the tests to find the modules
+pythonpath = ["./src"]
+filterwarnings = [
+    "ignore:.*urllib3.contrib.pyopenssl.*:DeprecationWarning",
+    "ignore::DeprecationWarning:pkg_resources",
+    "ignore::DeprecationWarning",
+]
