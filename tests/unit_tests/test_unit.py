@@ -10,7 +10,7 @@ def test_add_integers():
 
 def test_subtract_integers():
     assert functions.subtract(1, 2) == -1
-    assert functions.subtract(0, 0) == 1
+    assert functions.subtract(0, 0) == 0
 
 
 def test_subtract_wrong_types():
