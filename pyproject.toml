@@ -5,7 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 authors = [{ name = "torbjomg", email = "torbjorngul@gmail.com" }]
 requires-python = ">=3.12,<3.14"
-dependencies = []
+dependencies = [
+    "pre-commit>=4.1.0",
+]
 
 [project.scripts]
 pytesting-cicd = "pytesting_cicd:main"
@@ -15,7 +17,12 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
-dev = ["pre-commit>=4.1.0", "pytest>=8.3.4", "ruff>=0.9.7"]
+dev = [
+    "pre-commit>=4.1.0",
+    "pytest-cov>=6.0.0",
+    "pytest>=8.3.4",
+    "ruff>=0.9.7",
+]
 
 [tool.pytest.ini_options]
 # Add the src directory to the python path, needed for the tests to find the modules
